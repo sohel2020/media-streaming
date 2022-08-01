@@ -1,0 +1,205 @@
+2022-08-01 16:18:03.0|Error|CommandExecutor|Error occurred while executing task ProcessMonitoredDownloads
+
+[v3.0.8.1507] code = Error (1), message = System.Data.SQLite.SQLiteException (0x800007BF): SQL logic error
+no such table: Commands
+  at System.Data.SQLite.SQLite3.Prepare (System.Data.SQLite.SQLiteConnection cnn, System.String strSql, System.Data.SQLite.SQLiteStatement previous, System.UInt32 timeoutMS, System.String& strRemain) [0x003d3] in <cf516e4846354910b3d60749c894b1bf>:0 
+  at System.Data.SQLite.SQLiteCommand.BuildNextCommand () [0x000f6] in <cf516e4846354910b3d60749c894b1bf>:0 
+  at System.Data.SQLite.SQLiteCommand.GetStatement (System.Int32 index) [0x00008] in <cf516e4846354910b3d60749c894b1bf>:0 
+  at (wrapper remoting-invoke-with-check) System.Data.SQLite.SQLiteCommand.GetStatement(int)
+  at System.Data.SQLite.SQLiteDataReader.NextResult () [0x00124] in <cf516e4846354910b3d60749c894b1bf>:0 
+  at System.Data.SQLite.SQLiteDataReader..ctor (System.Data.SQLite.SQLiteCommand cmd, System.Data.CommandBehavior behave) [0x0008e] in <cf516e4846354910b3d60749c894b1bf>:0 
+  at (wrapper remoting-invoke-with-check) System.Data.SQLite.SQLiteDataReader..ctor(System.Data.SQLite.SQLiteCommand,System.Data.CommandBehavior)
+  at System.Data.SQLite.SQLiteCommand.ExecuteReader (System.Data.CommandBehavior behavior) [0x0000c] in <cf516e4846354910b3d60749c894b1bf>:0 
+  at System.Data.SQLite.SQLiteCommand.ExecuteNonQuery (System.Data.CommandBehavior behavior) [0x00006] in <cf516e4846354910b3d60749c894b1bf>:0 
+  at System.Data.SQLite.SQLiteCommand.ExecuteNonQuery () [0x00006] in <cf516e4846354910b3d60749c894b1bf>:0 
+  at Marr.Data.QGen.UpdateQueryBuilder`1[T].Execute () [0x0003b] in M:\BuildAgent\work\63739567f01dbcc2\src\Marr.Data\QGen\UpdateQueryBuilder.cs:157 
+  at NzbDrone.Core.Datastore.BasicRepository`1[TModel].SetFields (TModel model, System.Linq.Expressions.Expression`1[System.Func`2[TModel,System.Object]][] properties) [0x0002a] in M:\BuildAgent\work\63739567f01dbcc2\src\NzbDrone.Core\Datastore\BasicRepository.cs:246 
+  at NzbDrone.Core.Messaging.Commands.CommandRepository.End (NzbDrone.Core.Messaging.Commands.CommandModel command) [0x00000] in M:\BuildAgent\work\63739567f01dbcc2\src\NzbDrone.Core\Messaging\Commands\CommandRepository.cs:80 
+  at NzbDrone.Core.Messaging.Commands.CommandQueueManager.Update (NzbDrone.Core.Messaging.Commands.CommandModel command, NzbDrone.Core.Messaging.Commands.CommandStatus status, System.String message) [0x0005e] in M:\BuildAgent\work\63739567f01dbcc2\src\NzbDrone.Core\Messaging\Commands\CommandQueueManager.cs:247 
+  at NzbDrone.Core.Messaging.Commands.CommandQueueManager.Fail (NzbDrone.Core.Messaging.Commands.CommandModel command, System.String message, System.Exception e) [0x0000c] in M:\BuildAgent\work\63739567f01dbcc2\src\NzbDrone.Core\Messaging\Commands\CommandQueueManager.cs:194 
+  at NzbDrone.Core.Messaging.Commands.CommandExecutor.ExecuteCommand[TCommand] (TCommand command, NzbDrone.Core.Messaging.Commands.CommandModel commandModel) [0x000ce] in M:\BuildAgent\work\63739567f01dbcc2\src\NzbDrone.Core\Messaging\Commands\CommandExecutor.cs:95 
+  at (wrapper dynamic-method) System.Object.CallSite.Target(System.Runtime.CompilerServices.Closure,System.Runtime.CompilerServices.CallSite,NzbDrone.Core.Messaging.Commands.CommandExecutor,object,NzbDrone.Core.Messaging.Commands.CommandModel)
+  at System.Dynamic.UpdateDelegates.UpdateAndExecuteVoid3[T0,T1,T2] (System.Runtime.CompilerServices.CallSite site, T0 arg0, T1 arg1, T2 arg2) [0x00035] in <5b415632df1f4365ae2242b1a257bb5b>:0 
+  at (wrapper dynamic-method) System.Object.CallSite.Target(System.Runtime.CompilerServices.Closure,System.Runtime.CompilerServices.CallSite,NzbDrone.Core.Messaging.Commands.CommandExecutor,object,NzbDrone.Core.Messaging.Commands.CommandModel)
+  at NzbDrone.Core.Messaging.Commands.CommandExecutor.ExecuteCommands () [0x00027] in M:\BuildAgent\work\63739567f01dbcc2\src\NzbDrone.Core\Messaging\Commands\CommandExecutor.cs:41 
+
+2022-08-01 16:18:32.8|Error|EventAggregator|TaskManager failed while processing [CommandExecutedEvent]
+
+[v3.0.8.1507] code = Error (1), message = System.Data.SQLite.SQLiteException (0x800007BF): SQL logic error
+no such table: ScheduledTasks
+  at System.Data.SQLite.SQLite3.Prepare (System.Data.SQLite.SQLiteConnection cnn, System.String strSql, System.Data.SQLite.SQLiteStatement previous, System.UInt32 timeoutMS, System.String& strRemain) [0x003d3] in <cf516e4846354910b3d60749c894b1bf>:0 
+  at System.Data.SQLite.SQLiteCommand.BuildNextCommand () [0x000f6] in <cf516e4846354910b3d60749c894b1bf>:0 
+  at System.Data.SQLite.SQLiteCommand.GetStatement (System.Int32 index) [0x00008] in <cf516e4846354910b3d60749c894b1bf>:0 
+  at (wrapper remoting-invoke-with-check) System.Data.SQLite.SQLiteCommand.GetStatement(int)
+  at System.Data.SQLite.SQLiteDataReader.NextResult () [0x00124] in <cf516e4846354910b3d60749c894b1bf>:0 
+  at System.Data.SQLite.SQLiteDataReader..ctor (System.Data.SQLite.SQLiteCommand cmd, System.Data.CommandBehavior behave) [0x0008e] in <cf516e4846354910b3d60749c894b1bf>:0 
+  at (wrapper remoting-invoke-with-check) System.Data.SQLite.SQLiteDataReader..ctor(System.Data.SQLite.SQLiteCommand,System.Data.CommandBehavior)
+  at System.Data.SQLite.SQLiteCommand.ExecuteReader (System.Data.CommandBehavior behavior) [0x0000c] in <cf516e4846354910b3d60749c894b1bf>:0 
+  at System.Data.SQLite.SQLiteCommand.ExecuteDbDataReader (System.Data.CommandBehavior behavior) [0x00000] in <cf516e4846354910b3d60749c894b1bf>:0 
+  at System.Data.Common.DbCommand.ExecuteReader () [0x00000] in <d3b33a5f75ba43539b447fcfaf55c885>:0 
+  at (wrapper remoting-invoke-with-check) System.Data.Common.DbCommand.ExecuteReader()
+  at Marr.Data.DataMapper.Query[T] (System.String sql, System.Collections.Generic.ICollection`1[T] entityList, System.Boolean useAltName) [0x0006b] in M:\BuildAgent\work\63739567f01dbcc2\src\Marr.Data\DataMapper.cs:567 
+  at Marr.Data.QGen.QueryBuilder`1[T].ToList () [0x00052] in M:\BuildAgent\work\63739567f01dbcc2\src\Marr.Data\QGen\QueryBuilder.cs:279 
+  at NzbDrone.Core.Datastore.BasicRepository`1[TModel].All () [0x00000] in M:\BuildAgent\work\63739567f01dbcc2\src\NzbDrone.Core\Datastore\BasicRepository.cs:61 
+  at NzbDrone.Core.Jobs.TaskManager.Handle (NzbDrone.Core.Messaging.Events.CommandExecutedEvent message) [0x0000d] in M:\BuildAgent\work\63739567f01dbcc2\src\NzbDrone.Core\Jobs\TaskManager.cs:204 
+  at NzbDrone.Core.Messaging.Events.EventAggregator.PublishEvent[TEvent] (TEvent event) [0x0011a] in M:\BuildAgent\work\63739567f01dbcc2\src\NzbDrone.Core\Messaging\Events\EventAggregator.cs:92 
+
+2022-08-01 16:18:32.9|Error|CommandExecutor|Error occurred while executing task RssSync
+
+[v3.0.8.1507] code = Error (1), message = System.Data.SQLite.SQLiteException (0x800007BF): SQL logic error
+no such table: Commands
+  at System.Data.SQLite.SQLite3.Prepare (System.Data.SQLite.SQLiteConnection cnn, System.String strSql, System.Data.SQLite.SQLiteStatement previous, System.UInt32 timeoutMS, System.String& strRemain) [0x003d3] in <cf516e4846354910b3d60749c894b1bf>:0 
+  at System.Data.SQLite.SQLiteCommand.BuildNextCommand () [0x000f6] in <cf516e4846354910b3d60749c894b1bf>:0 
+  at System.Data.SQLite.SQLiteCommand.GetStatement (System.Int32 index) [0x00008] in <cf516e4846354910b3d60749c894b1bf>:0 
+  at (wrapper remoting-invoke-with-check) System.Data.SQLite.SQLiteCommand.GetStatement(int)
+  at System.Data.SQLite.SQLiteDataReader.NextResult () [0x00124] in <cf516e4846354910b3d60749c894b1bf>:0 
+  at System.Data.SQLite.SQLiteDataReader..ctor (System.Data.SQLite.SQLiteCommand cmd, System.Data.CommandBehavior behave) [0x0008e] in <cf516e4846354910b3d60749c894b1bf>:0 
+  at (wrapper remoting-invoke-with-check) System.Data.SQLite.SQLiteDataReader..ctor(System.Data.SQLite.SQLiteCommand,System.Data.CommandBehavior)
+  at System.Data.SQLite.SQLiteCommand.ExecuteReader (System.Data.CommandBehavior behavior) [0x0000c] in <cf516e4846354910b3d60749c894b1bf>:0 
+  at System.Data.SQLite.SQLiteCommand.ExecuteNonQuery (System.Data.CommandBehavior behavior) [0x00006] in <cf516e4846354910b3d60749c894b1bf>:0 
+  at System.Data.SQLite.SQLiteCommand.ExecuteNonQuery () [0x00006] in <cf516e4846354910b3d60749c894b1bf>:0 
+  at Marr.Data.QGen.UpdateQueryBuilder`1[T].Execute () [0x0003b] in M:\BuildAgent\work\63739567f01dbcc2\src\Marr.Data\QGen\UpdateQueryBuilder.cs:157 
+  at NzbDrone.Core.Datastore.BasicRepository`1[TModel].SetFields (TModel model, System.Linq.Expressions.Expression`1[System.Func`2[TModel,System.Object]][] properties) [0x0002a] in M:\BuildAgent\work\63739567f01dbcc2\src\NzbDrone.Core\Datastore\BasicRepository.cs:246 
+  at NzbDrone.Core.Messaging.Commands.CommandRepository.Start (NzbDrone.Core.Messaging.Commands.CommandModel command) [0x00000] in M:\BuildAgent\work\63739567f01dbcc2\src\NzbDrone.Core\Messaging\Commands\CommandRepository.cs:75 
+  at NzbDrone.Core.Messaging.Commands.CommandQueueManager.Start (NzbDrone.Core.Messaging.Commands.CommandModel command) [0x00016] in M:\BuildAgent\work\63739567f01dbcc2\src\NzbDrone.Core\Messaging\Commands\CommandQueueManager.cs:180 
+  at NzbDrone.Core.Messaging.Commands.CommandExecutor.ExecuteCommand[TCommand] (TCommand command, NzbDrone.Core.Messaging.Commands.CommandModel commandModel) [0x000e0] in M:\BuildAgent\work\63739567f01dbcc2\src\NzbDrone.Core\Messaging\Commands\CommandExecutor.cs:96 
+  at (wrapper dynamic-method) System.Object.CallSite.Target(System.Runtime.CompilerServices.Closure,System.Runtime.CompilerServices.CallSite,NzbDrone.Core.Messaging.Commands.CommandExecutor,object,NzbDrone.Core.Messaging.Commands.CommandModel)
+  at System.Dynamic.UpdateDelegates.UpdateAndExecuteVoid3[T0,T1,T2] (System.Runtime.CompilerServices.CallSite site, T0 arg0, T1 arg1, T2 arg2) [0x00035] in <5b415632df1f4365ae2242b1a257bb5b>:0 
+  at (wrapper dynamic-method) System.Object.CallSite.Target(System.Runtime.CompilerServices.Closure,System.Runtime.CompilerServices.CallSite,NzbDrone.Core.Messaging.Commands.CommandExecutor,object,NzbDrone.Core.Messaging.Commands.CommandModel)
+  at NzbDrone.Core.Messaging.Commands.CommandExecutor.ExecuteCommands () [0x00027] in M:\BuildAgent\work\63739567f01dbcc2\src\NzbDrone.Core\Messaging\Commands\CommandExecutor.cs:41 
+
+2022-08-01 16:19:02.8|Info|RssSyncService|Starting RSS Sync
+2022-08-01 16:19:02.8|Error|TaskExtensions|Task Error
+
+[v3.0.8.1507] code = Error (1), message = System.Data.SQLite.SQLiteException (0x800007BF): SQL logic error
+no such table: Commands
+  at System.Data.SQLite.SQLite3.Prepare (System.Data.SQLite.SQLiteConnection cnn, System.String strSql, System.Data.SQLite.SQLiteStatement previous, System.UInt32 timeoutMS, System.String& strRemain) [0x003d3] in <cf516e4846354910b3d60749c894b1bf>:0 
+  at System.Data.SQLite.SQLiteCommand.BuildNextCommand () [0x000f6] in <cf516e4846354910b3d60749c894b1bf>:0 
+  at System.Data.SQLite.SQLiteCommand.GetStatement (System.Int32 index) [0x00008] in <cf516e4846354910b3d60749c894b1bf>:0 
+  at (wrapper remoting-invoke-with-check) System.Data.SQLite.SQLiteCommand.GetStatement(int)
+  at System.Data.SQLite.SQLiteDataReader.NextResult () [0x00124] in <cf516e4846354910b3d60749c894b1bf>:0 
+  at System.Data.SQLite.SQLiteDataReader..ctor (System.Data.SQLite.SQLiteCommand cmd, System.Data.CommandBehavior behave) [0x0008e] in <cf516e4846354910b3d60749c894b1bf>:0 
+  at (wrapper remoting-invoke-with-check) System.Data.SQLite.SQLiteDataReader..ctor(System.Data.SQLite.SQLiteCommand,System.Data.CommandBehavior)
+  at System.Data.SQLite.SQLiteCommand.ExecuteReader (System.Data.CommandBehavior behavior) [0x0000c] in <cf516e4846354910b3d60749c894b1bf>:0 
+  at System.Data.SQLite.SQLiteCommand.ExecuteScalar (System.Data.CommandBehavior behavior) [0x00006] in <cf516e4846354910b3d60749c894b1bf>:0 
+  at System.Data.SQLite.SQLiteCommand.ExecuteScalar () [0x00006] in <cf516e4846354910b3d60749c894b1bf>:0 
+  at Marr.Data.QGen.InsertQueryBuilder`1[T].Execute () [0x00046] in M:\BuildAgent\work\63739567f01dbcc2\src\Marr.Data\QGen\InsertQueryBuilder.cs:140 
+  at Marr.Data.DataMapper.Insert[T] (T entity) [0x0005f] in M:\BuildAgent\work\63739567f01dbcc2\src\Marr.Data\DataMapper.cs:728 
+  at NzbDrone.Core.Datastore.BasicRepository`1[TModel].Insert (TModel model) [0x00030] in M:\BuildAgent\work\63739567f01dbcc2\src\NzbDrone.Core\Datastore\BasicRepository.cs:119 
+  at NzbDrone.Core.Messaging.Commands.CommandQueueManager.Push[TCommand] (TCommand command, NzbDrone.Core.Messaging.Commands.CommandPriority priority, NzbDrone.Core.Messaging.Commands.CommandTrigger trigger) [0x0015a] in M:\BuildAgent\work\63739567f01dbcc2\src\NzbDrone.Core\Messaging\Commands\CommandQueueManager.cs:126 
+  at System.Dynamic.UpdateDelegates.UpdateAndExecute4[T0,T1,T2,T3,TRet] (System.Runtime.CompilerServices.CallSite site, T0 arg0, T1 arg1, T2 arg2, T3 arg3) [0x00035] in <5b415632df1f4365ae2242b1a257bb5b>:0 
+  at (wrapper delegate-invoke) System.Func`6[System.Runtime.CompilerServices.CallSite,NzbDrone.Core.Messaging.Commands.CommandQueueManager,System.Object,NzbDrone.Core.Messaging.Commands.CommandPriority,NzbDrone.Core.Messaging.Commands.CommandTrigger,System.Object].invoke_TResult_T1_T2_T3_T4_T5(System.Runtime.CompilerServices.CallSite,NzbDrone.Core.Messaging.Commands.CommandQueueManager,object,NzbDrone.Core.Messaging.Commands.CommandPriority,NzbDrone.Core.Messaging.Commands.CommandTrigger)
+  at (wrapper dynamic-method) System.Object.CallSite.Target(System.Runtime.CompilerServices.Closure,System.Runtime.CompilerServices.CallSite,NzbDrone.Core.Messaging.Commands.CommandQueueManager,object,NzbDrone.Core.Messaging.Commands.CommandPriority,NzbDrone.Core.Messaging.Commands.CommandTrigger)
+  at NzbDrone.Core.Messaging.Commands.CommandQueueManager.Push (System.String commandName, System.Nullable`1[T] lastExecutionTime, NzbDrone.Core.Messaging.Commands.CommandPriority priority, NzbDrone.Core.Messaging.Commands.CommandTrigger trigger) [0x000b7] in M:\BuildAgent\work\63739567f01dbcc2\src\NzbDrone.Core\Messaging\Commands\CommandQueueManager.cs:139 
+  at NzbDrone.Core.Jobs.Scheduler.ExecuteCommands () [0x00043] in M:\BuildAgent\work\63739567f01dbcc2\src\NzbDrone.Core\Jobs\Scheduler.cs:42 
+  at System.Threading.Tasks.Task.InnerInvoke () [0x0000f] in <533173d24dae460899d2b10975534bb0>:0 
+  at System.Threading.Tasks.Task.Execute () [0x00000] in <533173d24dae460899d2b10975534bb0>:0 
+
+2022-08-01 16:19:02.9|Error|EventAggregator|TaskManager failed while processing [CommandExecutedEvent]
+
+[v3.0.8.1507] code = Error (1), message = System.Data.SQLite.SQLiteException (0x800007BF): SQL logic error
+no such table: ScheduledTasks
+  at System.Data.SQLite.SQLite3.Prepare (System.Data.SQLite.SQLiteConnection cnn, System.String strSql, System.Data.SQLite.SQLiteStatement previous, System.UInt32 timeoutMS, System.String& strRemain) [0x003d3] in <cf516e4846354910b3d60749c894b1bf>:0 
+  at System.Data.SQLite.SQLiteCommand.BuildNextCommand () [0x000f6] in <cf516e4846354910b3d60749c894b1bf>:0 
+  at System.Data.SQLite.SQLiteCommand.GetStatement (System.Int32 index) [0x00008] in <cf516e4846354910b3d60749c894b1bf>:0 
+  at (wrapper remoting-invoke-with-check) System.Data.SQLite.SQLiteCommand.GetStatement(int)
+  at System.Data.SQLite.SQLiteDataReader.NextResult () [0x00124] in <cf516e4846354910b3d60749c894b1bf>:0 
+  at System.Data.SQLite.SQLiteDataReader..ctor (System.Data.SQLite.SQLiteCommand cmd, System.Data.CommandBehavior behave) [0x0008e] in <cf516e4846354910b3d60749c894b1bf>:0 
+  at (wrapper remoting-invoke-with-check) System.Data.SQLite.SQLiteDataReader..ctor(System.Data.SQLite.SQLiteCommand,System.Data.CommandBehavior)
+  at System.Data.SQLite.SQLiteCommand.ExecuteReader (System.Data.CommandBehavior behavior) [0x0000c] in <cf516e4846354910b3d60749c894b1bf>:0 
+  at System.Data.SQLite.SQLiteCommand.ExecuteDbDataReader (System.Data.CommandBehavior behavior) [0x00000] in <cf516e4846354910b3d60749c894b1bf>:0 
+  at System.Data.Common.DbCommand.ExecuteReader () [0x00000] in <d3b33a5f75ba43539b447fcfaf55c885>:0 
+  at (wrapper remoting-invoke-with-check) System.Data.Common.DbCommand.ExecuteReader()
+  at Marr.Data.DataMapper.Query[T] (System.String sql, System.Collections.Generic.ICollection`1[T] entityList, System.Boolean useAltName) [0x0006b] in M:\BuildAgent\work\63739567f01dbcc2\src\Marr.Data\DataMapper.cs:567 
+  at Marr.Data.QGen.QueryBuilder`1[T].ToList () [0x00052] in M:\BuildAgent\work\63739567f01dbcc2\src\Marr.Data\QGen\QueryBuilder.cs:279 
+  at NzbDrone.Core.Datastore.BasicRepository`1[TModel].All () [0x00000] in M:\BuildAgent\work\63739567f01dbcc2\src\NzbDrone.Core\Datastore\BasicRepository.cs:61 
+  at NzbDrone.Core.Jobs.TaskManager.Handle (NzbDrone.Core.Messaging.Events.CommandExecutedEvent message) [0x0000d] in M:\BuildAgent\work\63739567f01dbcc2\src\NzbDrone.Core\Jobs\TaskManager.cs:204 
+  at NzbDrone.Core.Messaging.Events.EventAggregator.PublishEvent[TEvent] (TEvent event) [0x0011a] in M:\BuildAgent\work\63739567f01dbcc2\src\NzbDrone.Core\Messaging\Events\EventAggregator.cs:92 
+
+2022-08-01 16:19:02.9|Error|CommandExecutor|Error occurred while executing task RssSync
+
+[v3.0.8.1507] code = Error (1), message = System.Data.SQLite.SQLiteException (0x800007BF): SQL logic error
+no such table: Indexers
+  at System.Data.SQLite.SQLite3.Prepare (System.Data.SQLite.SQLiteConnection cnn, System.String strSql, System.Data.SQLite.SQLiteStatement previous, System.UInt32 timeoutMS, System.String& strRemain) [0x003d3] in <cf516e4846354910b3d60749c894b1bf>:0 
+  at System.Data.SQLite.SQLiteCommand.BuildNextCommand () [0x000f6] in <cf516e4846354910b3d60749c894b1bf>:0 
+  at System.Data.SQLite.SQLiteCommand.GetStatement (System.Int32 index) [0x00008] in <cf516e4846354910b3d60749c894b1bf>:0 
+  at (wrapper remoting-invoke-with-check) System.Data.SQLite.SQLiteCommand.GetStatement(int)
+  at System.Data.SQLite.SQLiteDataReader.NextResult () [0x00124] in <cf516e4846354910b3d60749c894b1bf>:0 
+  at System.Data.SQLite.SQLiteDataReader..ctor (System.Data.SQLite.SQLiteCommand cmd, System.Data.CommandBehavior behave) [0x0008e] in <cf516e4846354910b3d60749c894b1bf>:0 
+  at (wrapper remoting-invoke-with-check) System.Data.SQLite.SQLiteDataReader..ctor(System.Data.SQLite.SQLiteCommand,System.Data.CommandBehavior)
+  at System.Data.SQLite.SQLiteCommand.ExecuteReader (System.Data.CommandBehavior behavior) [0x0000c] in <cf516e4846354910b3d60749c894b1bf>:0 
+  at System.Data.SQLite.SQLiteCommand.ExecuteDbDataReader (System.Data.CommandBehavior behavior) [0x00000] in <cf516e4846354910b3d60749c894b1bf>:0 
+  at System.Data.Common.DbCommand.ExecuteReader () [0x00000] in <d3b33a5f75ba43539b447fcfaf55c885>:0 
+  at (wrapper remoting-invoke-with-check) System.Data.Common.DbCommand.ExecuteReader()
+  at Marr.Data.DataMapper.Query[T] (System.String sql, System.Collections.Generic.ICollection`1[T] entityList, System.Boolean useAltName) [0x0006b] in M:\BuildAgent\work\63739567f01dbcc2\src\Marr.Data\DataMapper.cs:567 
+  at Marr.Data.QGen.QueryBuilder`1[T].ToList () [0x00052] in M:\BuildAgent\work\63739567f01dbcc2\src\Marr.Data\QGen\QueryBuilder.cs:279 
+  at NzbDrone.Core.Datastore.BasicRepository`1[TModel].All () [0x00000] in M:\BuildAgent\work\63739567f01dbcc2\src\NzbDrone.Core\Datastore\BasicRepository.cs:61 
+  at NzbDrone.Core.ThingiProvider.ProviderFactory`2[TProvider,TProviderDefinition].All () [0x00000] in M:\BuildAgent\work\63739567f01dbcc2\src\NzbDrone.Core\ThingiProvider\ProviderFactory.cs:39 
+  at NzbDrone.Core.ThingiProvider.ProviderFactory`2[TProvider,TProviderDefinition].Active () [0x00000] in M:\BuildAgent\work\63739567f01dbcc2\src\NzbDrone.Core\ThingiProvider\ProviderFactory.cs:158 
+  at NzbDrone.Core.Indexers.IndexerFactory.Active () [0x00000] in M:\BuildAgent\work\63739567f01dbcc2\src\NzbDrone.Core\Indexers\IndexerFactory.cs:37 
+  at NzbDrone.Core.ThingiProvider.ProviderFactory`2[TProvider,TProviderDefinition].GetAvailableProviders () [0x00000] in M:\BuildAgent\work\63739567f01dbcc2\src\NzbDrone.Core\ThingiProvider\ProviderFactory.cs:91 
+  at NzbDrone.Core.Indexers.IndexerFactory.RssEnabled (System.Boolean filterBlockedIndexers) [0x00000] in M:\BuildAgent\work\63739567f01dbcc2\src\NzbDrone.Core\Indexers\IndexerFactory.cs:51 
+  at NzbDrone.Core.Indexers.FetchAndParseRssService.Fetch () [0x00018] in M:\BuildAgent\work\63739567f01dbcc2\src\NzbDrone.Core\Indexers\FetchAndParseRssService.cs:30 
+  at NzbDrone.Core.Indexers.RssSyncService.Sync () [0x00015] in M:\BuildAgent\work\63739567f01dbcc2\src\NzbDrone.Core\Indexers\RssSyncService.cs:47 
+  at NzbDrone.Core.Indexers.RssSyncService.Execute (NzbDrone.Core.Indexers.RssSyncCommand message) [0x00000] in M:\BuildAgent\work\63739567f01dbcc2\src\NzbDrone.Core\Indexers\RssSyncService.cs:68 
+  at NzbDrone.Core.Messaging.Commands.CommandExecutor.ExecuteCommand[TCommand] (TCommand command, NzbDrone.Core.Messaging.Commands.CommandModel commandModel) [0x000e0] in M:\BuildAgent\work\63739567f01dbcc2\src\NzbDrone.Core\Messaging\Commands\CommandExecutor.cs:96 
+  at (wrapper dynamic-method) System.Object.CallSite.Target(System.Runtime.CompilerServices.Closure,System.Runtime.CompilerServices.CallSite,NzbDrone.Core.Messaging.Commands.CommandExecutor,object,NzbDrone.Core.Messaging.Commands.CommandModel)
+  at NzbDrone.Core.Messaging.Commands.CommandExecutor.ExecuteCommands () [0x00027] in M:\BuildAgent\work\63739567f01dbcc2\src\NzbDrone.Core\Messaging\Commands\CommandExecutor.cs:41 
+
+2022-08-01 16:19:32.8|Error|TaskExtensions|Task Error
+
+[v3.0.8.1507] code = Error (1), message = System.Data.SQLite.SQLiteException (0x800007BF): SQL logic error
+no such table: Commands
+  at System.Data.SQLite.SQLite3.Prepare (System.Data.SQLite.SQLiteConnection cnn, System.String strSql, System.Data.SQLite.SQLiteStatement previous, System.UInt32 timeoutMS, System.String& strRemain) [0x003d3] in <cf516e4846354910b3d60749c894b1bf>:0 
+  at System.Data.SQLite.SQLiteCommand.BuildNextCommand () [0x000f6] in <cf516e4846354910b3d60749c894b1bf>:0 
+  at System.Data.SQLite.SQLiteCommand.GetStatement (System.Int32 index) [0x00008] in <cf516e4846354910b3d60749c894b1bf>:0 
+  at (wrapper remoting-invoke-with-check) System.Data.SQLite.SQLiteCommand.GetStatement(int)
+  at System.Data.SQLite.SQLiteDataReader.NextResult () [0x00124] in <cf516e4846354910b3d60749c894b1bf>:0 
+  at System.Data.SQLite.SQLiteDataReader..ctor (System.Data.SQLite.SQLiteCommand cmd, System.Data.CommandBehavior behave) [0x0008e] in <cf516e4846354910b3d60749c894b1bf>:0 
+  at (wrapper remoting-invoke-with-check) System.Data.SQLite.SQLiteDataReader..ctor(System.Data.SQLite.SQLiteCommand,System.Data.CommandBehavior)
+  at System.Data.SQLite.SQLiteCommand.ExecuteReader (System.Data.CommandBehavior behavior) [0x0000c] in <cf516e4846354910b3d60749c894b1bf>:0 
+  at System.Data.SQLite.SQLiteCommand.ExecuteScalar (System.Data.CommandBehavior behavior) [0x00006] in <cf516e4846354910b3d60749c894b1bf>:0 
+  at System.Data.SQLite.SQLiteCommand.ExecuteScalar () [0x00006] in <cf516e4846354910b3d60749c894b1bf>:0 
+  at Marr.Data.QGen.InsertQueryBuilder`1[T].Execute () [0x00046] in M:\BuildAgent\work\63739567f01dbcc2\src\Marr.Data\QGen\InsertQueryBuilder.cs:140 
+  at Marr.Data.DataMapper.Insert[T] (T entity) [0x0005f] in M:\BuildAgent\work\63739567f01dbcc2\src\Marr.Data\DataMapper.cs:728 
+  at NzbDrone.Core.Datastore.BasicRepository`1[TModel].Insert (TModel model) [0x00030] in M:\BuildAgent\work\63739567f01dbcc2\src\NzbDrone.Core\Datastore\BasicRepository.cs:119 
+  at NzbDrone.Core.Messaging.Commands.CommandQueueManager.Push[TCommand] (TCommand command, NzbDrone.Core.Messaging.Commands.CommandPriority priority, NzbDrone.Core.Messaging.Commands.CommandTrigger trigger) [0x0015a] in M:\BuildAgent\work\63739567f01dbcc2\src\NzbDrone.Core\Messaging\Commands\CommandQueueManager.cs:126 
+  at System.Dynamic.UpdateDelegates.UpdateAndExecute4[T0,T1,T2,T3,TRet] (System.Runtime.CompilerServices.CallSite site, T0 arg0, T1 arg1, T2 arg2, T3 arg3) [0x00035] in <5b415632df1f4365ae2242b1a257bb5b>:0 
+  at (wrapper delegate-invoke) System.Func`6[System.Runtime.CompilerServices.CallSite,NzbDrone.Core.Messaging.Commands.CommandQueueManager,System.Object,NzbDrone.Core.Messaging.Commands.CommandPriority,NzbDrone.Core.Messaging.Commands.CommandTrigger,System.Object].invoke_TResult_T1_T2_T3_T4_T5(System.Runtime.CompilerServices.CallSite,NzbDrone.Core.Messaging.Commands.CommandQueueManager,object,NzbDrone.Core.Messaging.Commands.CommandPriority,NzbDrone.Core.Messaging.Commands.CommandTrigger)
+  at (wrapper dynamic-method) System.Object.CallSite.Target(System.Runtime.CompilerServices.Closure,System.Runtime.CompilerServices.CallSite,NzbDrone.Core.Messaging.Commands.CommandQueueManager,object,NzbDrone.Core.Messaging.Commands.CommandPriority,NzbDrone.Core.Messaging.Commands.CommandTrigger)
+  at NzbDrone.Core.Messaging.Commands.CommandQueueManager.Push (System.String commandName, System.Nullable`1[T] lastExecutionTime, NzbDrone.Core.Messaging.Commands.CommandPriority priority, NzbDrone.Core.Messaging.Commands.CommandTrigger trigger) [0x000b7] in M:\BuildAgent\work\63739567f01dbcc2\src\NzbDrone.Core\Messaging\Commands\CommandQueueManager.cs:139 
+  at NzbDrone.Core.Jobs.Scheduler.ExecuteCommands () [0x00043] in M:\BuildAgent\work\63739567f01dbcc2\src\NzbDrone.Core\Jobs\Scheduler.cs:42 
+  at System.Threading.Tasks.Task.InnerInvoke () [0x0000f] in <533173d24dae460899d2b10975534bb0>:0 
+  at System.Threading.Tasks.Task.Execute () [0x00000] in <533173d24dae460899d2b10975534bb0>:0 
+
+2022-08-01 16:19:32.8|Info|RssSyncService|Starting RSS Sync
+2022-08-01 16:19:32.9|Error|CommandExecutor|Error occurred while executing task RssSync
+
+[v3.0.8.1507] code = Error (1), message = System.Data.SQLite.SQLiteException (0x800007BF): SQL logic error
+no such table: Indexers
+  at System.Data.SQLite.SQLite3.Prepare (System.Data.SQLite.SQLiteConnection cnn, System.String strSql, System.Data.SQLite.SQLiteStatement previous, System.UInt32 timeoutMS, System.String& strRemain) [0x003d3] in <cf516e4846354910b3d60749c894b1bf>:0 
+  at System.Data.SQLite.SQLiteCommand.BuildNextCommand () [0x000f6] in <cf516e4846354910b3d60749c894b1bf>:0 
+  at System.Data.SQLite.SQLiteCommand.GetStatement (System.Int32 index) [0x00008] in <cf516e4846354910b3d60749c894b1bf>:0 
+  at (wrapper remoting-invoke-with-check) System.Data.SQLite.SQLiteCommand.GetStatement(int)
+  at System.Data.SQLite.SQLiteDataReader.NextResult () [0x00124] in <cf516e4846354910b3d60749c894b1bf>:0 
+  at System.Data.SQLite.SQLiteDataReader..ctor (System.Data.SQLite.SQLiteCommand cmd, System.Data.CommandBehavior behave) [0x0008e] in <cf516e4846354910b3d60749c894b1bf>:0 
+  at (wrapper remoting-invoke-with-check) System.Data.SQLite.SQLiteDataReader..ctor(System.Data.SQLite.SQLiteCommand,System.Data.CommandBehavior)
+  at System.Data.SQLite.SQLiteCommand.ExecuteReader (System.Data.CommandBehavior behavior) [0x0000c] in <cf516e4846354910b3d60749c894b1bf>:0 
+  at System.Data.SQLite.SQLiteCommand.ExecuteDbDataReader (System.Data.CommandBehavior behavior) [0x00000] in <cf516e4846354910b3d60749c894b1bf>:0 
+  at System.Data.Common.DbCommand.ExecuteReader () [0x00000] in <d3b33a5f75ba43539b447fcfaf55c885>:0 
+  at (wrapper remoting-invoke-with-check) System.Data.Common.DbCommand.ExecuteReader()
+  at Marr.Data.DataMapper.Query[T] (System.String sql, System.Collections.Generic.ICollection`1[T] entityList, System.Boolean useAltName) [0x0006b] in M:\BuildAgent\work\63739567f01dbcc2\src\Marr.Data\DataMapper.cs:567 
+  at Marr.Data.QGen.QueryBuilder`1[T].ToList () [0x00052] in M:\BuildAgent\work\63739567f01dbcc2\src\Marr.Data\QGen\QueryBuilder.cs:279 
+  at NzbDrone.Core.Datastore.BasicRepository`1[TModel].All () [0x00000] in M:\BuildAgent\work\63739567f01dbcc2\src\NzbDrone.Core\Datastore\BasicRepository.cs:61 
+  at NzbDrone.Core.ThingiProvider.ProviderFactory`2[TProvider,TProviderDefinition].All () [0x00000] in M:\BuildAgent\work\63739567f01dbcc2\src\NzbDrone.Core\ThingiProvider\ProviderFactory.cs:39 
+  at NzbDrone.Core.ThingiProvider.ProviderFactory`2[TProvider,TProviderDefinition].Active () [0x00000] in M:\BuildAgent\work\63739567f01dbcc2\src\NzbDrone.Core\ThingiProvider\ProviderFactory.cs:158 
+  at NzbDrone.Core.Indexers.IndexerFactory.Active () [0x00000] in M:\BuildAgent\work\63739567f01dbcc2\src\NzbDrone.Core\Indexers\IndexerFactory.cs:37 
+  at NzbDrone.Core.ThingiProvider.ProviderFactory`2[TProvider,TProviderDefinition].GetAvailableProviders () [0x00000] in M:\BuildAgent\work\63739567f01dbcc2\src\NzbDrone.Core\ThingiProvider\ProviderFactory.cs:91 
+  at NzbDrone.Core.Indexers.IndexerFactory.RssEnabled (System.Boolean filterBlockedIndexers) [0x00000] in M:\BuildAgent\work\63739567f01dbcc2\src\NzbDrone.Core\Indexers\IndexerFactory.cs:51 
+  at NzbDrone.Core.Indexers.FetchAndParseRssService.Fetch () [0x00018] in M:\BuildAgent\work\63739567f01dbcc2\src\NzbDrone.Core\Indexers\FetchAndParseRssService.cs:30 
+  at NzbDrone.Core.Indexers.RssSyncService.Sync () [0x00015] in M:\BuildAgent\work\63739567f01dbcc2\src\NzbDrone.Core\Indexers\RssSyncService.cs:47 
+  at NzbDrone.Core.Indexers.RssSyncService.Execute (NzbDrone.Core.Indexers.RssSyncCommand message) [0x00000] in M:\BuildAgent\work\63739567f01dbcc2\src\NzbDrone.Core\Indexers\RssSyncService.cs:68 
+  at NzbDrone.Core.Messaging.Commands.CommandExecutor.ExecuteCommand[TCommand] (TCommand command, NzbDrone.Core.Messaging.Commands.CommandModel commandModel) [0x000e0] in M:\BuildAgent\work\63739567f01dbcc2\src\NzbDrone.Core\Messaging\Commands\CommandExecutor.cs:96 
+  at (wrapper dynamic-method) System.Object.CallSite.Target(System.Runtime.CompilerServices.Closure,System.Runtime.CompilerServices.CallSite,NzbDrone.Core.Messaging.Commands.CommandExecutor,object,NzbDrone.Core.Messaging.Commands.CommandModel)
+  at NzbDrone.Core.Messaging.Commands.CommandExecutor.ExecuteCommands () [0x00027] in M:\BuildAgent\work\63739567f01dbcc2\src\NzbDrone.Core\Messaging\Commands\CommandExecutor.cs:41 
+

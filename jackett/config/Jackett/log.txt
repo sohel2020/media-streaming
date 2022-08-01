@@ -1,0 +1,16 @@
+2022-08-01 16:18:33.4805 Warn Some of the categories provided are unsupported in 1337x: 2020,2050 
+2022-08-01 16:18:33.5192 Warn Some of the categories provided are unsupported in ExtraTorrent.st: 2030,2050 
+2022-08-01 16:18:33.5192 Warn Some of the categories provided are unsupported in CrazyHD: 2020,2030,2040 
+2022-08-01 16:18:33.5192 Warn Some of the categories provided are unsupported in kickasstorrents.ws: 2010,2020,2030,2040,2045,2050,2060 
+2022-08-01 16:18:33.5192 Warn Some of the categories provided are unsupported in kickasstorrents.to: 2010,2020,2030,2040,2045,2050,2060 
+2022-08-01 16:18:33.5192 Warn Some of the categories provided are unsupported in The Pirate Bay: 2010,2030,2045,2050 
+2022-08-01 16:18:33.5745 Info Torznab search in kickasstorrents.to => Found 16 releases (from cache) 
+2022-08-01 16:18:33.5725 Info Torznab search in 1337x => Found 20 releases (from cache) 
+2022-08-01 16:18:33.5745 Info Torznab search in ExtraTorrent.st => Found 10 releases (from cache) 
+2022-08-01 16:18:33.5745 Info Torznab search in CrazyHD => Found 45 releases (from cache) 
+2022-08-01 16:18:33.5745 Info Torznab search in kickasstorrents.ws => Found 11 releases (from cache) 
+2022-08-01 16:18:33.5192 Warn Some of the categories provided are unsupported in YTS: 2010,2020,2030,2050 
+2022-08-01 16:18:33.5745 Info Torznab search in The Pirate Bay => Found 1 releases (from cache) 
+2022-08-01 16:18:33.5745 Info Torznab search in YTS => Found 100 releases (from cache) 
+2022-08-01 16:18:33.8240 Warn No XML encryptor configured. Key {9927a7f3-ca3e-436e-941a-d70fc002b1ab} may be persisted to storage in unencrypted form. 
+2022-08-01 16:18:33.8240 Warn No XML encryptor configured. Key {9927a7f3-ca3e-436e-941a-d70fc002b1ab} may be persisted to storage in unencrypted form. 

@@ -1,0 +1,355 @@
+2022-08-01 16:18:33.4|Info|RssSyncService|Starting RSS Sync
+2022-08-01 16:18:33.6|Error|FetchAndParseRssService|Error during RSS Sync
+
+[v4.1.0.6175] code = Error (1), message = System.Data.SQLite.SQLiteException (0x800007BF): SQL logic error
+no such table: IndexerStatus
+   at System.Data.SQLite.SQLite3.Prepare(SQLiteConnection cnn, String strSql, SQLiteStatement previous, UInt32 timeoutMS, String& strRemain)
+   at System.Data.SQLite.SQLiteCommand.BuildNextCommand()
+   at System.Data.SQLite.SQLiteDataReader.NextResult()
+   at System.Data.SQLite.SQLiteDataReader..ctor(SQLiteCommand cmd, CommandBehavior behave)
+   at System.Data.SQLite.SQLiteCommand.ExecuteReader(CommandBehavior behavior)
+   at Dapper.SqlMapper.ExecuteReaderWithFlagsFallback(IDbCommand cmd, Boolean wasClosed, CommandBehavior behavior) in /_/Dapper/SqlMapper.cs:line 1075
+   at Dapper.SqlMapper.QueryImpl[T](IDbConnection cnn, CommandDefinition command, Type effectiveType)+MoveNext() in /_/Dapper/SqlMapper.cs:line 1094
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at Dapper.SqlMapper.Query[T](IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Boolean buffered, Nullable`1 commandTimeout, Nullable`1 commandType) in /_/Dapper/SqlMapper.cs:line 734
+   at NzbDrone.Core.Datastore.SqlMapperExtensions.Query[T](IDatabase db, String sql, Object param) in D:\a\1\s\src\NzbDrone.Core\Datastore\Extensions\SqlMapperExtensions.cs:line 17
+   at NzbDrone.Core.Datastore.BasicRepository`1.Query(SqlBuilder builder) in D:\a\1\s\src\NzbDrone.Core\Datastore\BasicRepository.cs:line 72
+   at NzbDrone.Core.ThingiProvider.Status.ProviderStatusRepository`1.FindByProviderId(Int32 providerId)
+   at NzbDrone.Core.ThingiProvider.Status.ProviderStatusServiceBase`2.GetProviderStatus(Int32 providerId) in D:\a\1\s\src\NzbDrone.Core\ThingiProvider\Status\ProviderStatusServiceBase.cs:line 50
+   at NzbDrone.Core.ThingiProvider.Status.ProviderStatusServiceBase`2.RecordFailure(Int32 providerId, TimeSpan minimumBackOff, Boolean escalate) in D:\a\1\s\src\NzbDrone.Core\ThingiProvider\Status\ProviderStatusServiceBase.cs:line 84
+   at NzbDrone.Core.ThingiProvider.Status.ProviderStatusServiceBase`2.RecordFailure(Int32 providerId, TimeSpan minimumBackOff) in D:\a\1\s\src\NzbDrone.Core\ThingiProvider\Status\ProviderStatusServiceBase.cs:line 134
+   at NzbDrone.Core.Indexers.HttpIndexerBase`1.FetchReleases(Func`2 pageableRequestChainSelector, Boolean isRecent) in D:\a\1\s\src\NzbDrone.Core\Indexers\HttpIndexerBase.cs:line 256
+   at NzbDrone.Core.Indexers.FetchAndParseRssService.<>c__DisplayClass3_1.<Fetch>b__0() in D:\a\1\s\src\NzbDrone.Core\Indexers\FetchAndParseRssService.cs:line 65
+SQL: 
+==== Begin Query Trace ====
+
+QUERY TEXT:
+SELECT IndexerStatus.*
+ FROM IndexerStatus    WHERE ("IndexerStatus"."ProviderId" = @Clause1_P1)
+   
+
+PARAMETERS:
+Clause1_P1 = [5]
+
+==== End Query Trace ====
+
+
+
+2022-08-01 16:18:33.6|Error|FetchAndParseRssService|Error during RSS Sync
+
+[v4.1.0.6175] code = Error (1), message = System.Data.SQLite.SQLiteException (0x800007BF): SQL logic error
+no such table: IndexerStatus
+   at System.Data.SQLite.SQLite3.Prepare(SQLiteConnection cnn, String strSql, SQLiteStatement previous, UInt32 timeoutMS, String& strRemain)
+   at System.Data.SQLite.SQLiteCommand.BuildNextCommand()
+   at System.Data.SQLite.SQLiteDataReader.NextResult()
+   at System.Data.SQLite.SQLiteDataReader..ctor(SQLiteCommand cmd, CommandBehavior behave)
+   at System.Data.SQLite.SQLiteCommand.ExecuteReader(CommandBehavior behavior)
+   at Dapper.SqlMapper.ExecuteReaderWithFlagsFallback(IDbCommand cmd, Boolean wasClosed, CommandBehavior behavior) in /_/Dapper/SqlMapper.cs:line 1075
+   at Dapper.SqlMapper.QueryImpl[T](IDbConnection cnn, CommandDefinition command, Type effectiveType)+MoveNext() in /_/Dapper/SqlMapper.cs:line 1094
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at Dapper.SqlMapper.Query[T](IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Boolean buffered, Nullable`1 commandTimeout, Nullable`1 commandType) in /_/Dapper/SqlMapper.cs:line 734
+   at NzbDrone.Core.Datastore.SqlMapperExtensions.Query[T](IDatabase db, String sql, Object param) in D:\a\1\s\src\NzbDrone.Core\Datastore\Extensions\SqlMapperExtensions.cs:line 17
+   at NzbDrone.Core.Datastore.BasicRepository`1.Query(SqlBuilder builder) in D:\a\1\s\src\NzbDrone.Core\Datastore\BasicRepository.cs:line 72
+   at NzbDrone.Core.ThingiProvider.Status.ProviderStatusRepository`1.FindByProviderId(Int32 providerId)
+   at NzbDrone.Core.ThingiProvider.Status.ProviderStatusServiceBase`2.GetProviderStatus(Int32 providerId) in D:\a\1\s\src\NzbDrone.Core\ThingiProvider\Status\ProviderStatusServiceBase.cs:line 50
+   at NzbDrone.Core.ThingiProvider.Status.ProviderStatusServiceBase`2.RecordFailure(Int32 providerId, TimeSpan minimumBackOff, Boolean escalate) in D:\a\1\s\src\NzbDrone.Core\ThingiProvider\Status\ProviderStatusServiceBase.cs:line 84
+   at NzbDrone.Core.ThingiProvider.Status.ProviderStatusServiceBase`2.RecordFailure(Int32 providerId, TimeSpan minimumBackOff) in D:\a\1\s\src\NzbDrone.Core\ThingiProvider\Status\ProviderStatusServiceBase.cs:line 134
+   at NzbDrone.Core.Indexers.HttpIndexerBase`1.FetchReleases(Func`2 pageableRequestChainSelector, Boolean isRecent) in D:\a\1\s\src\NzbDrone.Core\Indexers\HttpIndexerBase.cs:line 256
+   at NzbDrone.Core.Indexers.FetchAndParseRssService.<>c__DisplayClass3_1.<Fetch>b__0() in D:\a\1\s\src\NzbDrone.Core\Indexers\FetchAndParseRssService.cs:line 65
+SQL: 
+==== Begin Query Trace ====
+
+QUERY TEXT:
+SELECT IndexerStatus.*
+ FROM IndexerStatus    WHERE ("IndexerStatus"."ProviderId" = @Clause1_P1)
+   
+
+PARAMETERS:
+Clause1_P1 = [4]
+
+==== End Query Trace ====
+
+
+
+2022-08-01 16:18:33.6|Error|FetchAndParseRssService|Error during RSS Sync
+
+[v4.1.0.6175] code = Error (1), message = System.Data.SQLite.SQLiteException (0x800007BF): SQL logic error
+no such table: IndexerStatus
+   at System.Data.SQLite.SQLite3.Prepare(SQLiteConnection cnn, String strSql, SQLiteStatement previous, UInt32 timeoutMS, String& strRemain)
+   at System.Data.SQLite.SQLiteCommand.BuildNextCommand()
+   at System.Data.SQLite.SQLiteDataReader.NextResult()
+   at System.Data.SQLite.SQLiteDataReader..ctor(SQLiteCommand cmd, CommandBehavior behave)
+   at System.Data.SQLite.SQLiteCommand.ExecuteReader(CommandBehavior behavior)
+   at Dapper.SqlMapper.ExecuteReaderWithFlagsFallback(IDbCommand cmd, Boolean wasClosed, CommandBehavior behavior) in /_/Dapper/SqlMapper.cs:line 1075
+   at Dapper.SqlMapper.QueryImpl[T](IDbConnection cnn, CommandDefinition command, Type effectiveType)+MoveNext() in /_/Dapper/SqlMapper.cs:line 1094
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at Dapper.SqlMapper.Query[T](IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Boolean buffered, Nullable`1 commandTimeout, Nullable`1 commandType) in /_/Dapper/SqlMapper.cs:line 734
+   at NzbDrone.Core.Datastore.SqlMapperExtensions.Query[T](IDatabase db, String sql, Object param) in D:\a\1\s\src\NzbDrone.Core\Datastore\Extensions\SqlMapperExtensions.cs:line 17
+   at NzbDrone.Core.Datastore.BasicRepository`1.Query(SqlBuilder builder) in D:\a\1\s\src\NzbDrone.Core\Datastore\BasicRepository.cs:line 72
+   at NzbDrone.Core.ThingiProvider.Status.ProviderStatusRepository`1.FindByProviderId(Int32 providerId)
+   at NzbDrone.Core.ThingiProvider.Status.ProviderStatusServiceBase`2.GetProviderStatus(Int32 providerId) in D:\a\1\s\src\NzbDrone.Core\ThingiProvider\Status\ProviderStatusServiceBase.cs:line 50
+   at NzbDrone.Core.ThingiProvider.Status.ProviderStatusServiceBase`2.RecordFailure(Int32 providerId, TimeSpan minimumBackOff, Boolean escalate) in D:\a\1\s\src\NzbDrone.Core\ThingiProvider\Status\ProviderStatusServiceBase.cs:line 84
+   at NzbDrone.Core.ThingiProvider.Status.ProviderStatusServiceBase`2.RecordFailure(Int32 providerId, TimeSpan minimumBackOff) in D:\a\1\s\src\NzbDrone.Core\ThingiProvider\Status\ProviderStatusServiceBase.cs:line 134
+   at NzbDrone.Core.Indexers.HttpIndexerBase`1.FetchReleases(Func`2 pageableRequestChainSelector, Boolean isRecent) in D:\a\1\s\src\NzbDrone.Core\Indexers\HttpIndexerBase.cs:line 256
+   at NzbDrone.Core.Indexers.FetchAndParseRssService.<>c__DisplayClass3_1.<Fetch>b__0() in D:\a\1\s\src\NzbDrone.Core\Indexers\FetchAndParseRssService.cs:line 65
+SQL: 
+==== Begin Query Trace ====
+
+QUERY TEXT:
+SELECT IndexerStatus.*
+ FROM IndexerStatus    WHERE ("IndexerStatus"."ProviderId" = @Clause1_P1)
+   
+
+PARAMETERS:
+Clause1_P1 = [7]
+
+==== End Query Trace ====
+
+
+
+2022-08-01 16:18:33.6|Error|FetchAndParseRssService|Error during RSS Sync
+
+[v4.1.0.6175] code = Error (1), message = System.Data.SQLite.SQLiteException (0x800007BF): SQL logic error
+no such table: IndexerStatus
+   at System.Data.SQLite.SQLite3.Prepare(SQLiteConnection cnn, String strSql, SQLiteStatement previous, UInt32 timeoutMS, String& strRemain)
+   at System.Data.SQLite.SQLiteCommand.BuildNextCommand()
+   at System.Data.SQLite.SQLiteDataReader.NextResult()
+   at System.Data.SQLite.SQLiteDataReader..ctor(SQLiteCommand cmd, CommandBehavior behave)
+   at System.Data.SQLite.SQLiteCommand.ExecuteReader(CommandBehavior behavior)
+   at Dapper.SqlMapper.ExecuteReaderWithFlagsFallback(IDbCommand cmd, Boolean wasClosed, CommandBehavior behavior) in /_/Dapper/SqlMapper.cs:line 1075
+   at Dapper.SqlMapper.QueryImpl[T](IDbConnection cnn, CommandDefinition command, Type effectiveType)+MoveNext() in /_/Dapper/SqlMapper.cs:line 1094
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at Dapper.SqlMapper.Query[T](IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Boolean buffered, Nullable`1 commandTimeout, Nullable`1 commandType) in /_/Dapper/SqlMapper.cs:line 734
+   at NzbDrone.Core.Datastore.SqlMapperExtensions.Query[T](IDatabase db, String sql, Object param) in D:\a\1\s\src\NzbDrone.Core\Datastore\Extensions\SqlMapperExtensions.cs:line 17
+   at NzbDrone.Core.Datastore.BasicRepository`1.Query(SqlBuilder builder) in D:\a\1\s\src\NzbDrone.Core\Datastore\BasicRepository.cs:line 72
+   at NzbDrone.Core.ThingiProvider.Status.ProviderStatusRepository`1.FindByProviderId(Int32 providerId)
+   at NzbDrone.Core.ThingiProvider.Status.ProviderStatusServiceBase`2.GetProviderStatus(Int32 providerId) in D:\a\1\s\src\NzbDrone.Core\ThingiProvider\Status\ProviderStatusServiceBase.cs:line 50
+   at NzbDrone.Core.ThingiProvider.Status.ProviderStatusServiceBase`2.RecordFailure(Int32 providerId, TimeSpan minimumBackOff, Boolean escalate) in D:\a\1\s\src\NzbDrone.Core\ThingiProvider\Status\ProviderStatusServiceBase.cs:line 84
+   at NzbDrone.Core.ThingiProvider.Status.ProviderStatusServiceBase`2.RecordFailure(Int32 providerId, TimeSpan minimumBackOff) in D:\a\1\s\src\NzbDrone.Core\ThingiProvider\Status\ProviderStatusServiceBase.cs:line 134
+   at NzbDrone.Core.Indexers.HttpIndexerBase`1.FetchReleases(Func`2 pageableRequestChainSelector, Boolean isRecent) in D:\a\1\s\src\NzbDrone.Core\Indexers\HttpIndexerBase.cs:line 256
+   at NzbDrone.Core.Indexers.FetchAndParseRssService.<>c__DisplayClass3_1.<Fetch>b__0() in D:\a\1\s\src\NzbDrone.Core\Indexers\FetchAndParseRssService.cs:line 65
+SQL: 
+==== Begin Query Trace ====
+
+QUERY TEXT:
+SELECT IndexerStatus.*
+ FROM IndexerStatus    WHERE ("IndexerStatus"."ProviderId" = @Clause1_P1)
+   
+
+PARAMETERS:
+Clause1_P1 = [2]
+
+==== End Query Trace ====
+
+
+
+2022-08-01 16:18:33.6|Error|FetchAndParseRssService|Error during RSS Sync
+
+[v4.1.0.6175] code = Error (1), message = System.Data.SQLite.SQLiteException (0x800007BF): SQL logic error
+no such table: IndexerStatus
+   at System.Data.SQLite.SQLite3.Prepare(SQLiteConnection cnn, String strSql, SQLiteStatement previous, UInt32 timeoutMS, String& strRemain)
+   at System.Data.SQLite.SQLiteCommand.BuildNextCommand()
+   at System.Data.SQLite.SQLiteDataReader.NextResult()
+   at System.Data.SQLite.SQLiteDataReader..ctor(SQLiteCommand cmd, CommandBehavior behave)
+   at System.Data.SQLite.SQLiteCommand.ExecuteReader(CommandBehavior behavior)
+   at Dapper.SqlMapper.ExecuteReaderWithFlagsFallback(IDbCommand cmd, Boolean wasClosed, CommandBehavior behavior) in /_/Dapper/SqlMapper.cs:line 1075
+   at Dapper.SqlMapper.QueryImpl[T](IDbConnection cnn, CommandDefinition command, Type effectiveType)+MoveNext() in /_/Dapper/SqlMapper.cs:line 1094
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at Dapper.SqlMapper.Query[T](IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Boolean buffered, Nullable`1 commandTimeout, Nullable`1 commandType) in /_/Dapper/SqlMapper.cs:line 734
+   at NzbDrone.Core.Datastore.SqlMapperExtensions.Query[T](IDatabase db, String sql, Object param) in D:\a\1\s\src\NzbDrone.Core\Datastore\Extensions\SqlMapperExtensions.cs:line 17
+   at NzbDrone.Core.Datastore.BasicRepository`1.Query(SqlBuilder builder) in D:\a\1\s\src\NzbDrone.Core\Datastore\BasicRepository.cs:line 72
+   at NzbDrone.Core.ThingiProvider.Status.ProviderStatusRepository`1.FindByProviderId(Int32 providerId)
+   at NzbDrone.Core.ThingiProvider.Status.ProviderStatusServiceBase`2.GetProviderStatus(Int32 providerId) in D:\a\1\s\src\NzbDrone.Core\ThingiProvider\Status\ProviderStatusServiceBase.cs:line 50
+   at NzbDrone.Core.ThingiProvider.Status.ProviderStatusServiceBase`2.RecordFailure(Int32 providerId, TimeSpan minimumBackOff, Boolean escalate) in D:\a\1\s\src\NzbDrone.Core\ThingiProvider\Status\ProviderStatusServiceBase.cs:line 84
+   at NzbDrone.Core.ThingiProvider.Status.ProviderStatusServiceBase`2.RecordFailure(Int32 providerId, TimeSpan minimumBackOff) in D:\a\1\s\src\NzbDrone.Core\ThingiProvider\Status\ProviderStatusServiceBase.cs:line 134
+   at NzbDrone.Core.Indexers.HttpIndexerBase`1.FetchReleases(Func`2 pageableRequestChainSelector, Boolean isRecent) in D:\a\1\s\src\NzbDrone.Core\Indexers\HttpIndexerBase.cs:line 256
+   at NzbDrone.Core.Indexers.FetchAndParseRssService.<>c__DisplayClass3_1.<Fetch>b__0() in D:\a\1\s\src\NzbDrone.Core\Indexers\FetchAndParseRssService.cs:line 65
+SQL: 
+==== Begin Query Trace ====
+
+QUERY TEXT:
+SELECT IndexerStatus.*
+ FROM IndexerStatus    WHERE ("IndexerStatus"."ProviderId" = @Clause1_P1)
+   
+
+PARAMETERS:
+Clause1_P1 = [6]
+
+==== End Query Trace ====
+
+
+
+2022-08-01 16:18:33.6|Error|FetchAndParseRssService|Error during RSS Sync
+
+[v4.1.0.6175] code = Error (1), message = System.Data.SQLite.SQLiteException (0x800007BF): SQL logic error
+no such table: IndexerStatus
+   at System.Data.SQLite.SQLite3.Prepare(SQLiteConnection cnn, String strSql, SQLiteStatement previous, UInt32 timeoutMS, String& strRemain)
+   at System.Data.SQLite.SQLiteCommand.BuildNextCommand()
+   at System.Data.SQLite.SQLiteDataReader.NextResult()
+   at System.Data.SQLite.SQLiteDataReader..ctor(SQLiteCommand cmd, CommandBehavior behave)
+   at System.Data.SQLite.SQLiteCommand.ExecuteReader(CommandBehavior behavior)
+   at Dapper.SqlMapper.ExecuteReaderWithFlagsFallback(IDbCommand cmd, Boolean wasClosed, CommandBehavior behavior) in /_/Dapper/SqlMapper.cs:line 1075
+   at Dapper.SqlMapper.QueryImpl[T](IDbConnection cnn, CommandDefinition command, Type effectiveType)+MoveNext() in /_/Dapper/SqlMapper.cs:line 1094
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at Dapper.SqlMapper.Query[T](IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Boolean buffered, Nullable`1 commandTimeout, Nullable`1 commandType) in /_/Dapper/SqlMapper.cs:line 734
+   at NzbDrone.Core.Datastore.SqlMapperExtensions.Query[T](IDatabase db, String sql, Object param) in D:\a\1\s\src\NzbDrone.Core\Datastore\Extensions\SqlMapperExtensions.cs:line 17
+   at NzbDrone.Core.Datastore.BasicRepository`1.Query(SqlBuilder builder) in D:\a\1\s\src\NzbDrone.Core\Datastore\BasicRepository.cs:line 72
+   at NzbDrone.Core.ThingiProvider.Status.ProviderStatusRepository`1.FindByProviderId(Int32 providerId)
+   at NzbDrone.Core.ThingiProvider.Status.ProviderStatusServiceBase`2.GetProviderStatus(Int32 providerId) in D:\a\1\s\src\NzbDrone.Core\ThingiProvider\Status\ProviderStatusServiceBase.cs:line 50
+   at NzbDrone.Core.ThingiProvider.Status.ProviderStatusServiceBase`2.RecordFailure(Int32 providerId, TimeSpan minimumBackOff, Boolean escalate) in D:\a\1\s\src\NzbDrone.Core\ThingiProvider\Status\ProviderStatusServiceBase.cs:line 84
+   at NzbDrone.Core.ThingiProvider.Status.ProviderStatusServiceBase`2.RecordFailure(Int32 providerId, TimeSpan minimumBackOff) in D:\a\1\s\src\NzbDrone.Core\ThingiProvider\Status\ProviderStatusServiceBase.cs:line 134
+   at NzbDrone.Core.Indexers.HttpIndexerBase`1.FetchReleases(Func`2 pageableRequestChainSelector, Boolean isRecent) in D:\a\1\s\src\NzbDrone.Core\Indexers\HttpIndexerBase.cs:line 256
+   at NzbDrone.Core.Indexers.FetchAndParseRssService.<>c__DisplayClass3_1.<Fetch>b__0() in D:\a\1\s\src\NzbDrone.Core\Indexers\FetchAndParseRssService.cs:line 65
+SQL: 
+==== Begin Query Trace ====
+
+QUERY TEXT:
+SELECT IndexerStatus.*
+ FROM IndexerStatus    WHERE ("IndexerStatus"."ProviderId" = @Clause1_P1)
+   
+
+PARAMETERS:
+Clause1_P1 = [1]
+
+==== End Query Trace ====
+
+
+
+2022-08-01 16:18:33.9|Error|FetchAndParseRssService|Error during RSS Sync
+
+[v4.1.0.6175] code = Error (1), message = System.Data.SQLite.SQLiteException (0x800007BF): SQL logic error
+no such table: IndexerStatus
+   at System.Data.SQLite.SQLite3.Prepare(SQLiteConnection cnn, String strSql, SQLiteStatement previous, UInt32 timeoutMS, String& strRemain)
+   at System.Data.SQLite.SQLiteCommand.BuildNextCommand()
+   at System.Data.SQLite.SQLiteDataReader.NextResult()
+   at System.Data.SQLite.SQLiteDataReader..ctor(SQLiteCommand cmd, CommandBehavior behave)
+   at System.Data.SQLite.SQLiteCommand.ExecuteReader(CommandBehavior behavior)
+   at Dapper.SqlMapper.ExecuteReaderWithFlagsFallback(IDbCommand cmd, Boolean wasClosed, CommandBehavior behavior) in /_/Dapper/SqlMapper.cs:line 1075
+   at Dapper.SqlMapper.QueryImpl[T](IDbConnection cnn, CommandDefinition command, Type effectiveType)+MoveNext() in /_/Dapper/SqlMapper.cs:line 1094
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at Dapper.SqlMapper.Query[T](IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Boolean buffered, Nullable`1 commandTimeout, Nullable`1 commandType) in /_/Dapper/SqlMapper.cs:line 734
+   at NzbDrone.Core.Datastore.SqlMapperExtensions.Query[T](IDatabase db, String sql, Object param) in D:\a\1\s\src\NzbDrone.Core\Datastore\Extensions\SqlMapperExtensions.cs:line 17
+   at NzbDrone.Core.Datastore.BasicRepository`1.Query(SqlBuilder builder) in D:\a\1\s\src\NzbDrone.Core\Datastore\BasicRepository.cs:line 72
+   at NzbDrone.Core.ThingiProvider.Status.ProviderStatusRepository`1.FindByProviderId(Int32 providerId)
+   at NzbDrone.Core.ThingiProvider.Status.ProviderStatusServiceBase`2.GetProviderStatus(Int32 providerId) in D:\a\1\s\src\NzbDrone.Core\ThingiProvider\Status\ProviderStatusServiceBase.cs:line 50
+   at NzbDrone.Core.ThingiProvider.Status.ProviderStatusServiceBase`2.RecordFailure(Int32 providerId, TimeSpan minimumBackOff, Boolean escalate) in D:\a\1\s\src\NzbDrone.Core\ThingiProvider\Status\ProviderStatusServiceBase.cs:line 84
+   at NzbDrone.Core.ThingiProvider.Status.ProviderStatusServiceBase`2.RecordFailure(Int32 providerId, TimeSpan minimumBackOff) in D:\a\1\s\src\NzbDrone.Core\ThingiProvider\Status\ProviderStatusServiceBase.cs:line 134
+   at NzbDrone.Core.Indexers.HttpIndexerBase`1.FetchReleases(Func`2 pageableRequestChainSelector, Boolean isRecent) in D:\a\1\s\src\NzbDrone.Core\Indexers\HttpIndexerBase.cs:line 256
+   at NzbDrone.Core.Indexers.FetchAndParseRssService.<>c__DisplayClass3_1.<Fetch>b__0() in D:\a\1\s\src\NzbDrone.Core\Indexers\FetchAndParseRssService.cs:line 65
+SQL: 
+==== Begin Query Trace ====
+
+QUERY TEXT:
+SELECT IndexerStatus.*
+ FROM IndexerStatus    WHERE ("IndexerStatus"."ProviderId" = @Clause1_P1)
+   
+
+PARAMETERS:
+Clause1_P1 = [3]
+
+==== End Query Trace ====
+
+
+
+2022-08-01 16:18:33.9|Error|EventAggregator|TaskManager failed while processing [CommandExecutedEvent]
+
+[v4.1.0.6175] code = Error (1), message = System.Data.SQLite.SQLiteException (0x800007BF): SQL logic error
+no such table: ScheduledTasks
+   at System.Data.SQLite.SQLite3.Prepare(SQLiteConnection cnn, String strSql, SQLiteStatement previous, UInt32 timeoutMS, String& strRemain)
+   at System.Data.SQLite.SQLiteCommand.BuildNextCommand()
+   at System.Data.SQLite.SQLiteDataReader.NextResult()
+   at System.Data.SQLite.SQLiteDataReader..ctor(SQLiteCommand cmd, CommandBehavior behave)
+   at System.Data.SQLite.SQLiteCommand.ExecuteReader(CommandBehavior behavior)
+   at Dapper.SqlMapper.ExecuteReaderWithFlagsFallback(IDbCommand cmd, Boolean wasClosed, CommandBehavior behavior) in /_/Dapper/SqlMapper.cs:line 1075
+   at Dapper.SqlMapper.QueryImpl[T](IDbConnection cnn, CommandDefinition command, Type effectiveType)+MoveNext() in /_/Dapper/SqlMapper.cs:line 1094
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at Dapper.SqlMapper.Query[T](IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Boolean buffered, Nullable`1 commandTimeout, Nullable`1 commandType) in /_/Dapper/SqlMapper.cs:line 734
+   at NzbDrone.Core.Datastore.SqlMapperExtensions.Query[T](IDatabase db, String sql, Object param) in D:\a\1\s\src\NzbDrone.Core\Datastore\Extensions\SqlMapperExtensions.cs:line 17
+   at NzbDrone.Core.Datastore.BasicRepository`1.Query(SqlBuilder builder) in D:\a\1\s\src\NzbDrone.Core\Datastore\BasicRepository.cs:line 72
+   at NzbDrone.Core.Jobs.TaskManager.Handle(CommandExecutedEvent message)
+   at NzbDrone.Core.Messaging.Events.EventAggregator.PublishEvent[TEvent](TEvent event)
+SQL: 
+==== Begin Query Trace ====
+
+QUERY TEXT:
+SELECT ScheduledTasks.*
+ FROM ScheduledTasks       
+
+PARAMETERS:
+
+==== End Query Trace ====
+
+
+
+2022-08-01 16:18:33.9|Error|CommandExecutor|Error occurred while executing task RssSync
+
+[v4.1.0.6175] code = Error (1), message = System.Data.SQLite.SQLiteException (0x800007BF): SQL logic error
+no such table: Commands
+   at System.Data.SQLite.SQLite3.Prepare(SQLiteConnection cnn, String strSql, SQLiteStatement previous, UInt32 timeoutMS, String& strRemain)
+   at System.Data.SQLite.SQLiteCommand.BuildNextCommand()
+   at System.Data.SQLite.SQLiteDataReader.NextResult()
+   at System.Data.SQLite.SQLiteDataReader..ctor(SQLiteCommand cmd, CommandBehavior behave)
+   at System.Data.SQLite.SQLiteCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.SQLite.SQLiteCommand.ExecuteNonQuery(CommandBehavior behavior)
+   at Dapper.SqlMapper.ExecuteCommand(IDbConnection cnn, CommandDefinition& command, Action`2 paramReader) in /_/Dapper/SqlMapper.cs:line 2858
+   at Dapper.SqlMapper.ExecuteImpl(IDbConnection cnn, CommandDefinition& command) in /_/Dapper/SqlMapper.cs:line 581
+   at NzbDrone.Core.Datastore.BasicRepository`1.UpdateFields(IDbConnection connection, IDbTransaction transaction, TModel model, List`1 propertiesToUpdate) in D:\a\1\s\src\NzbDrone.Core\Datastore\BasicRepository.cs:line 379
+   at NzbDrone.Core.Datastore.BasicRepository`1.SetFields(TModel model, Expression`1[] properties) in D:\a\1\s\src\NzbDrone.Core\Datastore\BasicRepository.cs:line 329
+   at NzbDrone.Core.Messaging.Commands.CommandQueueManager.Update(CommandModel command, CommandStatus status, String message) in D:\a\1\s\src\NzbDrone.Core\Messaging\Commands\CommandQueueManager.cs:line 246
+   at NzbDrone.Core.Messaging.Commands.CommandQueueManager.Fail(CommandModel command, String message, Exception e) in D:\a\1\s\src\NzbDrone.Core\Messaging\Commands\CommandQueueManager.cs:line 201
+   at NzbDrone.Core.Messaging.Commands.CommandExecutor.ExecuteCommand[TCommand](TCommand command, CommandModel commandModel) in D:\a\1\s\src\NzbDrone.Core\Messaging\Commands\CommandExecutor.cs:line 113
+   at System.Dynamic.UpdateDelegates.UpdateAndExecuteVoid3[T0,T1,T2](CallSite site, T0 arg0, T1 arg1, T2 arg2)
+   at NzbDrone.Core.Messaging.Commands.CommandExecutor.ExecuteCommands() in D:\a\1\s\src\NzbDrone.Core\Messaging\Commands\CommandExecutor.cs:line 44
+
+
+2022-08-01 16:19:03.3|Error|TaskExtensions|Task Error
+
+[v4.1.0.6175] code = Error (1), message = System.Data.SQLite.SQLiteException (0x800007BF): SQL logic error
+no such table: Commands
+   at System.Data.SQLite.SQLite3.Prepare(SQLiteConnection cnn, String strSql, SQLiteStatement previous, UInt32 timeoutMS, String& strRemain)
+   at System.Data.SQLite.SQLiteCommand.BuildNextCommand()
+   at System.Data.SQLite.SQLiteDataReader.NextResult()
+   at System.Data.SQLite.SQLiteDataReader..ctor(SQLiteCommand cmd, CommandBehavior behave)
+   at System.Data.SQLite.SQLiteCommand.ExecuteReader(CommandBehavior behavior)
+   at Dapper.SqlMapper.ExecuteReaderWithFlagsFallback(IDbCommand cmd, Boolean wasClosed, CommandBehavior behavior) in /_/Dapper/SqlMapper.cs:line 1075
+   at Dapper.SqlMapper.QueryMultipleImpl(IDbConnection cnn, CommandDefinition& command) in /_/Dapper/SqlMapper.cs:line 1058
+   at NzbDrone.Core.Datastore.BasicRepository`1.Insert(IDbConnection connection, IDbTransaction transaction, TModel model) in D:\a\1\s\src\NzbDrone.Core\Datastore\BasicRepository.cs:line 183
+   at NzbDrone.Core.Datastore.BasicRepository`1.Insert(TModel model) in D:\a\1\s\src\NzbDrone.Core\Datastore\BasicRepository.cs:line 151
+   at NzbDrone.Core.Messaging.Commands.CommandQueueManager.Push[TCommand](TCommand command, CommandPriority priority, CommandTrigger trigger) in D:\a\1\s\src\NzbDrone.Core\Messaging\Commands\CommandQueueManager.cs:line 137
+   at System.Dynamic.UpdateDelegates.UpdateAndExecute4[T0,T1,T2,T3,TRet](CallSite site, T0 arg0, T1 arg1, T2 arg2, T3 arg3)
+   at NzbDrone.Core.Messaging.Commands.CommandQueueManager.Push(String commandName, Nullable`1 lastExecutionTime, Nullable`1 lastStartTime, CommandPriority priority, CommandTrigger trigger) in D:\a\1\s\src\NzbDrone.Core\Messaging\Commands\CommandQueueManager.cs:line 141
+   at NzbDrone.Core.Jobs.Scheduler.ExecuteCommands() in D:\a\1\s\src\NzbDrone.Core\Jobs\Scheduler.cs:line 42
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+
+
+2022-08-01 16:19:33.4|Error|TaskExtensions|Task Error
+
+[v4.1.0.6175] code = Error (1), message = System.Data.SQLite.SQLiteException (0x800007BF): SQL logic error
+no such table: Commands
+   at System.Data.SQLite.SQLite3.Prepare(SQLiteConnection cnn, String strSql, SQLiteStatement previous, UInt32 timeoutMS, String& strRemain)
+   at System.Data.SQLite.SQLiteCommand.BuildNextCommand()
+   at System.Data.SQLite.SQLiteDataReader.NextResult()
+   at System.Data.SQLite.SQLiteDataReader..ctor(SQLiteCommand cmd, CommandBehavior behave)
+   at System.Data.SQLite.SQLiteCommand.ExecuteReader(CommandBehavior behavior)
+   at Dapper.SqlMapper.ExecuteReaderWithFlagsFallback(IDbCommand cmd, Boolean wasClosed, CommandBehavior behavior) in /_/Dapper/SqlMapper.cs:line 1075
+   at Dapper.SqlMapper.QueryMultipleImpl(IDbConnection cnn, CommandDefinition& command) in /_/Dapper/SqlMapper.cs:line 1058
+   at NzbDrone.Core.Datastore.BasicRepository`1.Insert(IDbConnection connection, IDbTransaction transaction, TModel model) in D:\a\1\s\src\NzbDrone.Core\Datastore\BasicRepository.cs:line 183
+   at NzbDrone.Core.Datastore.BasicRepository`1.Insert(TModel model) in D:\a\1\s\src\NzbDrone.Core\Datastore\BasicRepository.cs:line 151
+   at NzbDrone.Core.Messaging.Commands.CommandQueueManager.Push[TCommand](TCommand command, CommandPriority priority, CommandTrigger trigger) in D:\a\1\s\src\NzbDrone.Core\Messaging\Commands\CommandQueueManager.cs:line 137
+   at NzbDrone.Core.Messaging.Commands.CommandQueueManager.Push(String commandName, Nullable`1 lastExecutionTime, Nullable`1 lastStartTime, CommandPriority priority, CommandTrigger trigger) in D:\a\1\s\src\NzbDrone.Core\Messaging\Commands\CommandQueueManager.cs:line 141
+   at NzbDrone.Core.Jobs.Scheduler.ExecuteCommands() in D:\a\1\s\src\NzbDrone.Core\Jobs\Scheduler.cs:line 42
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+
+
