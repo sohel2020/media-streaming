@@ -18,7 +18,7 @@ while true; do
   DIR=`dirname "$SRC"`
   if [ "$DIR" == "$DOWNLOAD" ]; then
     echo `date` "INFO " "$3" moved as "$SRC". >> "$LOG"
-    mv --backup=t "$SRC" "$COMPLETE" >> "$LOG" 2>&1
+    mv "$SRC" "$COMPLETE" >> "$LOG" 2>&1
     exit $?
   elif [ "$DIR" == "/" -o "$DIR" == "." ]; then
     echo `date` ERROR "$3" not under "$DOWNLOAD". >> "$LOG"
